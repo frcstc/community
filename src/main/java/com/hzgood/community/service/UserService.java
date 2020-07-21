@@ -10,7 +10,7 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public User findByToken(String token) {
-        return userMapper.findByToken(token);
+    public User findById(Long id) {
+        return userMapper.findById(id);
     }
 }

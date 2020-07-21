@@ -18,18 +18,6 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("token")) {
-                String token = cookie.getValue();
-                User user = userService.findByToken(token);
-                if (user != null) {
-                    System.out.println(user.toString());
-                    request.getSession().setAttribute("user", user);
-                }
-                break;
-            }
-        }
         return "index";
     }
 
